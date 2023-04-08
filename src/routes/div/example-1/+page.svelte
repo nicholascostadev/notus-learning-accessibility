@@ -4,16 +4,11 @@
 	function increment() {
 		timesClicked += 1;
 	}
-
-	function handleKeyDown(event: KeyboardEvent) {
-		if (event.key !== 'Enter') return;
-
-		increment();
-	}
 </script>
 
 <div class="container">
-	<div class="box" on:click={increment} on:keydown={handleKeyDown} tabindex="0" role="button" />
+	<p aria-hidden="true">Clique aqui</p>
+	<div class="box" on:click={increment} />
 
 	<p>Clicked {timesClicked} times</p>
 </div>

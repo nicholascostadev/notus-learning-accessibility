@@ -13,7 +13,11 @@
 </script>
 
 <div class="container">
-	<div class="box" on:click={increment} on:keydown={handleKeyDown} />
+	<p aria-hidden="true">Tenta com o teclado</p>
+	{#if timesClicked > 0}
+		YAY :)
+	{/if}
+	<div class="box" on:click={increment} on:keydown={handleKeyDown} tabindex="0" role="button" />
 
 	<p>Clicked {timesClicked} times</p>
 </div>

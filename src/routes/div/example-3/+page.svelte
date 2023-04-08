@@ -4,10 +4,20 @@
 	function increment() {
 		timesClicked += 1;
 	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key !== 'Enter') return;
+
+		increment();
+	}
 </script>
 
 <div class="container">
-	<div class="box" on:click={increment} />
+	<p aria-hidden="true">Tenta com o teclado</p>
+	{#if timesClicked > 0}
+		YAY :)
+	{/if}
+	<div class="box" on:click={increment} on:keydown={handleKeyDown} tabindex="0" />
 
 	<p>Clicked {timesClicked} times</p>
 </div>

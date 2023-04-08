@@ -64,6 +64,15 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="first-part">
+		<h2>Links</h2>
+		<ul>
+			<li>
+				<a href="/links">Utilizados</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 <main>
 	<slot />

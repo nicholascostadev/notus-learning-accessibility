@@ -66,6 +66,15 @@
 	</div>
 
 	<div class="first-part">
+		<h2>Modal Acessível</h2>
+		<ul>
+			<li>
+				<a href="/modal">Exemplo</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="first-part">
 		<h2>Links</h2>
 		<ul>
 			<li>
@@ -132,7 +141,6 @@
 		bottom: 16px;
 		right: 16px;
 		padding: 0.5rem;
-		background-color: #0d0d0d;
 
 		color: #fff;
 		font-size: 2rem;

@@ -4,7 +4,7 @@
 	<section aria-label="Lado Esquerdo legal">Lado Esquerdo</section>
 	<section aria-label="Lado Direito legal">Lado Direito</section>
 	<p>O que o leitor lê: "Lado Esquerdo legal 'região' Lado Esquerdo"</p>
-	<p>O que o leitor lê: "Lado Direito legal 'região' Lado Esquerdo"</p>
+	<p>O que o leitor lê: "Lado Direito legal 'região' Lado Direito"</p>
 
 	<p aria-hidden="true" style="grid-column: 1/-1;padding-top:1rem">
 		PS: Note que assim que focamos no lado esquerdo, ele lê apenas o conteúdo do lado esquerdo,

@@ -3,7 +3,7 @@
 	import { scale, fade } from 'svelte/transition';
 
 	let modalOpen = false;
-	let closeButton: HTMLButtonElement;
+	let openModalButton: HTMLButtonElement;
 
 	const focusableElements = 'button, input, [tabindex]:not([tabindex="-1"])';
 	let modal: HTMLDivElement;
@@ -25,7 +25,7 @@
 	async function closeModal() {
 		modalOpen = false;
 		await tick();
-		closeButton.focus();
+		openModalButton.focus();
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
@@ -56,9 +56,11 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<button class="open-modal-btn-2" on:click={handleOpenModal}>Abrir Modal 2</button>
+<button class="open-modal-btn positioned-modal-button" on:click={handleOpenModal}>
+	Abrir Modal 2
+</button>
 
-<button bind:this={closeButton} class="open-modal-btn" on:click={handleOpenModal}>
+<button bind:this={openModalButton} class="open-modal-btn" on:click={handleOpenModal}>
 	Abrir Modal
 </button>
 {#if modalOpen}
@@ -66,7 +68,6 @@
 		class="bg"
 		on:click={closeModal}
 		on:keydown
-		tabIndex="-1"
 		in:fade={{ duration: 300 }}
 		out:fade={{ duration: 300 }}
 	>
@@ -78,25 +79,32 @@
 			out:scale={{ start: 0.6, duration: 300 }}
 			class="content"
 			id="modal"
-			tabIndex="-1"
 			role="dialog"
 			aria-labelledby="modal-title"
 			aria-modal="true"
 		>
-			<h2 id="modal-title">Modal para fazer tal coisa</h2>
-			<input
-				bind:this={modalFirstInput}
-				type="text"
-				name="text"
-				placeholder="Escreva o que quiser"
-				aria-label="Input pra texto legal"
-			/>
-			<input
-				type="text"
-				name="teste"
-				aria-label="Input pra outro texto"
-				placeholder="Escreve aí pô"
-			/>
+			<h2 id="modal-title">Modal para eu roubar o seu nome</h2>
+			<div class="label-wrapper">
+				<label for="first-name">Nome</label>
+				<input
+					bind:this={modalFirstInput}
+					type="text"
+					name="first-name"
+					id="first-name"
+					placeholder="Seu nome aqui"
+					aria-label="Input para Nome"
+				/>
+			</div>
+			<div class="label-wrapper">
+				<label for="last-name">Sobrenome</label>
+				<input
+					type="text"
+					name="last-name"
+					id="last-name"
+					aria-label="Input para Sobrenome"
+					placeholder="Seu sobrenome aqui"
+				/>
+			</div>
 			<div>
 				<button on:click={closeModal} bind:this={lastFocusableElement}>Fechar Modal</button>
 			</div>
@@ -132,10 +140,17 @@
 		border-radius: 0.5rem;
 	}
 
+	.label-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
 	input {
 		background-color: transparent;
 		border: 1px solid #fdfdfd;
 		padding: 0.5rem 1rem;
+		border-radius: 4px;
 		width: 100%;
 
 		font-size: 1rem;
@@ -161,11 +176,13 @@
 		max-width: 120px;
 	}
 
-	.open-modal-btn-2 {
+	.hidden {
 		display: none;
+	}
+
+	.positioned-modal-button {
 		position: absolute;
 		top: 100px;
 		left: 100px;
-		max-width: 120px;
 	}
 </style>

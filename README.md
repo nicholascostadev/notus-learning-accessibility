@@ -37,5 +37,6 @@ Cada exemplo é uma continuação do primeiro exemplo, sempre melhorando aos pou
 
 1. [W3](https://www.w3.org/WAI/fundamentals/accessibility-principles/)
 2. [W3 aria-modal](https://www.w3.org/TR/wai-aria-1.1/#aria-modal)
-3. [Aria by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
-4. [Github Eslint Plugin para acessibilidade](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules)
+3. [W3 dialog-modal](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+4. [Aria by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+5. [Github Eslint Plugin para acessibilidade](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules)

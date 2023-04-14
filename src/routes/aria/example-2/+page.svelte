@@ -13,9 +13,9 @@
 </script>
 
 <div class="container">
-	<div class="box" on:click={increment} on:keydown={handleKeyDown} tabindex="0" role="button">
+	<button class="box" on:click={increment}>
 		<span class="sr-only">Botão que incrementa a contagem</span>
-	</div>
+	</button>
 
 	<p>Clicked {timesClicked} times</p>
 </div>

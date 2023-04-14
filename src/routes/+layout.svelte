@@ -69,7 +69,10 @@
 		<h2>Modal Acessível</h2>
 		<ul>
 			<li>
-				<a href="/modal">Exemplo</a>
+				<a href="/modal/example-1">Exemplo 1</a>
+			</li>
+			<li>
+				<a href="/modal/example-2">Exemplo 2</a>
 			</li>
 		</ul>
 	</div>
